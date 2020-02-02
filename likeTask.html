@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Vue</title>
+    <style>
+        body{
+            font-size: 30px;
+            background-color:dimgrey;
+        }
+        img{
+            margin-top: 100px;
+            height: 200px;
+            width: 200px;
+            margin-left: 80px;
+        }
+        #two{
+            margin-left: 120px;
+        }
+        #one{
+            margin-left: -20px;
+        }
+        #MyId{
+            margin-left: 100px;
+        }
+        i:hover{
+            color: dodgerblue;
+        }
+        #dis{
+            margin-left: 130px;
+            margin-top: -30px;
+            font-size: 15px;
+            color: #fff;
+        }
+        #lik{
+            margin-left: -20px;
+            font-size: 15px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="a.jpg">
+    <div id="MyId">
+        <!-- <a v-bind:href="website">click</a> -->
+        <p id="lik">{{count}} Like</p>
+        <p id="dis">{{dislike}} Dislike</p>
+        <i class="fa fa-thumbs-up" v-on:click = like() id="one"></i>
+        <i class="fa fa-thumbs-down" v-on:click = Dislike id="two"></i>
+    </div>
+    </table>
+    <script>
+        var myapp = new Vue({
+            el: "#MyId",
+            data:{
+                // website: "https://www.facebook.com/",
+                count: '',
+                dislike: ''
+            },
+            methods:{
+                like:function(){
+                    this.count++
+                    if(this.dislike != 0)
+                    this.dislike--
+                },
+                Dislike:function(){
+                    this.dislike++
+                    if(this.count != 0)
+                    this.count--
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
